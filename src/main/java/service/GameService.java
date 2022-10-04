@@ -29,16 +29,13 @@ public class GameService {
       for(int i =0 ;i < gameNumber;i ++){
          game.challengeMove();
          showState(game.getCarState(),car);
-
+         systemMessage.lineChange();
       }
    }
 
    public void endGame(){
-      for(int i =0 ;i < gameNumber;i ++){
-         game.challengeMove();
-         showState(game.getCarState(),car);
+      gameMessage.showWinner(game.getWinner());
 
-      }
    }
 
    private void showState(Map<String, Integer> carState, Car car) {
@@ -49,7 +46,7 @@ public class GameService {
    }
 
    private int setGameNumber() {
-      gameMessage.getGetGameNumberMessage();
+      gameMessage.getGameNumberMessage();
       return getGameNumberByUser(Console.readLine());
    }
 
@@ -66,13 +63,13 @@ public class GameService {
    }
 
    private Car setCarName() {
-      gameMessage.getGetCarNAmeMessage();
+      gameMessage.getCarNAmeMessage();
       return getCarNameByUser(Console.readLine());
    }
 
    private Car getCarNameByUser(String input) {
-      splitCarName = new SplitCarName(input);
       try {
+         splitCarName = new SplitCarName(input);
          car = new Car(splitCarName.getCarName());
          return car;
       } catch (IllegalArgumentException e){

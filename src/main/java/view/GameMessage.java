@@ -3,10 +3,10 @@ package view;
 import java.util.Map;
 
 public class GameMessage {
-    public void getGetCarNAmeMessage(){
+    public void getCarNAmeMessage(){
         System.out.println("경주할자동차이름(이름은쉼표(,)기준으로구분)");
     }
-    public void getGetGameNumberMessage(){
+    public void getGameNumberMessage(){
         System.out.println("시도할 횟수");
     }
 
@@ -16,5 +16,8 @@ public class GameMessage {
             position+="-";
         }
         System.out.println(name +" : " + position);
+    }
+    public void showWinner(String winner){
+        System.out.println("최종 우승자 : " + winner.substring(0,winner.length()-1));
     }
 }

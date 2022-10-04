@@ -42,8 +42,18 @@ public class Game {
         }
     }
 
-    public int highState(){
+    private int highScore(){
         return Collections.max(carState.values());
+    }
+    public String getWinner(){
+        int highScore= highScore();
+        String winners="";
+        for(String carName: car.getCars()){
+            if(carState.get(carName)==highScore){
+                winners+=carName+",";
+            }
+        }
+        return winners;
     }
 
 }
