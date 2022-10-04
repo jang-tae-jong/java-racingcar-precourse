@@ -10,5 +10,7 @@ public class GameController {
 
     public void run(){
         gameService.setGame();
+        gameService.playGame();
+        gameService.endGame();
     }
 }

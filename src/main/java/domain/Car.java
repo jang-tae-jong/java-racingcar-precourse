@@ -19,7 +19,11 @@ public class Car {
 
     private void checkNameLength(String carName) {
         if(carName.length()>5 ||carName.length()==0){
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("[ERROR] 이름은 5글자 이하여야합니다.");
         }
+    }
+
+    public String[] getCars() {
+        return cars;
     }
 }
